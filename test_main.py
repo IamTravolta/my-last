@@ -12,5 +12,5 @@ def test_index(client):
     response = client.get("/")
 
     assert response.status_code == 200
-    assert b"<title>index</title>" in response.data
+    assert response.data == b"last Winc!"
 
