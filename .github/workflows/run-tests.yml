@@ -1,14 +1,16 @@
 name: Run Tests
 
 on: push
+
 jobs:
   run-tests:
     runs-on: ubuntu-20.04
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Update to use version 4
       - name: Setup Python 3.11
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4  # Update to use version 4
         with:
           python-version: '3.11.0'
       - name: Install Dependencies
