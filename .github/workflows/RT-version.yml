@@ -1,0 +1,30 @@
+name: Run Tests
+
+on: push
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'  # Use a supported Python version
+
+      - name: Set up virtual environment
+        run: python -m venv venv
+        shell: bash
+
+      - name: Activate virtual environment
+        run: source venv/bin/activate
+        shell: bash
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest
