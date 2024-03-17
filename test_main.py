@@ -1,4 +1,4 @@
-import pytest
+from . import pytest
 
 from main import app
 
